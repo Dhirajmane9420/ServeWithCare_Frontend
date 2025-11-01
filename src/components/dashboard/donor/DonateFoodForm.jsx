@@ -10,7 +10,7 @@ const DonateFoodForm = () => {
   const [longitude, setLongitude] = useState('73.8567');
 
   // TEMPORARY FIX: Use direct URL to bypass failing ENV system
-  const API_URL = 'http://localhost:5000'; 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

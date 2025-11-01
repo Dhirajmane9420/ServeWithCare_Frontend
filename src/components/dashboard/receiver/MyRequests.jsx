@@ -11,7 +11,9 @@ const MyRequests = () => {
     // 1. Define the function that fetches data
     const loadMyRequests = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/requests/me');
+       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+        const res = await axios.get(`${API_URL}/api/requests/me`);
+
         setMyRequests(res.data);
         setError(null);
       } catch (err) {

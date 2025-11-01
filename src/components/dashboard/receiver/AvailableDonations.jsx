@@ -14,7 +14,7 @@ const AvailableDonations = () => {
   const [viewMode, setViewMode] = useState('list'); 
 
   // Use the (temporary) hardcoded API URL for stability
-  const API_URL = 'http://localhost:5000'; 
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'; 
 
   useEffect(() => {
     const loadAvailableDonations = async () => {

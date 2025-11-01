@@ -7,7 +7,7 @@ const ProfileSection = () => {
   const [formData, setFormData] = useState({ name: '', contact: '', address: '', ngo: '' });
 
   // --- FIX: Use a direct string constant for stability ---
-  const API_URL = 'http://localhost:5000'; 
+  const API_URL =import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   // Load user data from API
   useEffect(() => {
